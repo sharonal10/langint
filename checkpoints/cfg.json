@@ -1,0 +1,146 @@
+{
+    "_ENV_VARS_": {
+        "DEBUG": 0,
+        "FAST_ATTENTION": 0,
+        "FORCE_MEM_EFFICIENT_ATTN": "1",
+        "IF_I_FLOAT16": "0",
+        "T5_BFLOAT16": "1"
+    },
+    "blip_guidance": 0,
+    "color_blip_coeff": 0.001,
+    "data": {
+        "__target__": "langint.datasets.glide.SyntheticBiLevel",
+        "kwargs": {
+            "data_root": "chair-wood-red,chair-wood-orange,chair-wood-yellow,chair-wood-green,chair-wood-blue,chair-wood-purple,chair-wood-black,chair-wood-white,chair-metal-red,chair-metal-orange,chair-metal-yellow,chair-metal-green,chair-metal-blue,chair-metal-purple,chair-metal-black,chair-metal-white,chair-plastic-red,chair-plastic-orange,chair-plastic-yellow,chair-plastic-green,chair-plastic-blue,chair-plastic-purple,chair-plastic-black,chair-plastic-white,table-wood-red,table-wood-orange,table-wood-yellow,table-wood-green,table-wood-blue,table-wood-purple,table-wood-black,table-wood-white,table-metal-red,table-metal-orange,table-metal-yellow,table-metal-green,table-metal-blue,table-metal-purple,table-metal-black,table-metal-white,table-plastic-red,table-plastic-orange,table-plastic-yellow,table-plastic-green,table-plastic-blue,table-plastic-purple,table-plastic-black,table-plastic-white,bench-wood-red,bench-wood-orange,bench-wood-yellow,bench-wood-green,bench-wood-blue,bench-wood-purple,bench-wood-black,bench-wood-white,bench-metal-red,bench-metal-orange,bench-metal-yellow,bench-metal-green,bench-metal-blue,bench-metal-purple,bench-metal-black,bench-metal-white,bench-plastic-red,bench-plastic-orange,bench-plastic-yellow,bench-plastic-green,bench-plastic-blue,bench-plastic-purple,bench-plastic-black,bench-plastic-white",
+            "num_data_copies": 1,
+            "num_data_per_prompt": 8,
+            "num_placeholder_groups": 3,
+            "num_placeholder_words": 72,
+            "shared_tokens": 1,
+            "templates": {
+                "__target__": "langint.utils.dataset.build_trilevel_templates_enforce",
+                "kwargs": {}
+            }
+        }
+    },
+    "data_val": {
+        "__target__": "langint.datasets.glide.SyntheticBiLevelEval",
+        "kwargs": {
+            "data_root": "chair-wood-red,chair-wood-orange,chair-wood-yellow,chair-wood-green,chair-wood-blue,chair-wood-purple,chair-wood-black,chair-wood-white,chair-metal-red,chair-metal-orange,chair-metal-yellow,chair-metal-green,chair-metal-blue,chair-metal-purple,chair-metal-black,chair-metal-white,chair-plastic-red,chair-plastic-orange,chair-plastic-yellow,chair-plastic-green,chair-plastic-blue,chair-plastic-purple,chair-plastic-black,chair-plastic-white,table-wood-red,table-wood-orange,table-wood-yellow,table-wood-green,table-wood-blue,table-wood-purple,table-wood-black,table-wood-white,table-metal-red,table-metal-orange,table-metal-yellow,table-metal-green,table-metal-blue,table-metal-purple,table-metal-black,table-metal-white,table-plastic-red,table-plastic-orange,table-plastic-yellow,table-plastic-green,table-plastic-blue,table-plastic-purple,table-plastic-black,table-plastic-white,bench-wood-red,bench-wood-orange,bench-wood-yellow,bench-wood-green,bench-wood-blue,bench-wood-purple,bench-wood-black,bench-wood-white,bench-metal-red,bench-metal-orange,bench-metal-yellow,bench-metal-green,bench-metal-blue,bench-metal-purple,bench-metal-black,bench-metal-white,bench-plastic-red,bench-plastic-orange,bench-plastic-yellow,bench-plastic-green,bench-plastic-blue,bench-plastic-purple,bench-plastic-black,bench-plastic-white",
+            "num_placeholder_words": 72,
+            "templates": {
+                "__target__": "langint.utils.dataset.build_trilevel_templates_enforce",
+                "kwargs": {}
+            }
+        }
+    },
+    "dataset": "chair-wood-red,chair-wood-orange,chair-wood-yellow,chair-wood-green,chair-wood-blue,chair-wood-purple,chair-wood-black,chair-wood-white,chair-metal-red,chair-metal-orange,chair-metal-yellow,chair-metal-green,chair-metal-blue,chair-metal-purple,chair-metal-black,chair-metal-white,chair-plastic-red,chair-plastic-orange,chair-plastic-yellow,chair-plastic-green,chair-plastic-blue,chair-plastic-purple,chair-plastic-black,chair-plastic-white,table-wood-red,table-wood-orange,table-wood-yellow,table-wood-green,table-wood-blue,table-wood-purple,table-wood-black,table-wood-white,table-metal-red,table-metal-orange,table-metal-yellow,table-metal-green,table-metal-blue,table-metal-purple,table-metal-black,table-metal-white,table-plastic-red,table-plastic-orange,table-plastic-yellow,table-plastic-green,table-plastic-blue,table-plastic-purple,table-plastic-black,table-plastic-white,bench-wood-red,bench-wood-orange,bench-wood-yellow,bench-wood-green,bench-wood-blue,bench-wood-purple,bench-wood-black,bench-wood-white,bench-metal-red,bench-metal-orange,bench-metal-yellow,bench-metal-green,bench-metal-blue,bench-metal-purple,bench-metal-black,bench-metal-white,bench-plastic-red,bench-plastic-orange,bench-plastic-yellow,bench-plastic-green,bench-plastic-blue,bench-plastic-purple,bench-plastic-black,bench-plastic-white",
+    "fruit_blip_coeff": 0.0002,
+    "gt_init": 0,
+    "initializer_word": null,
+    "log_dir": "logs/__train_deepfloyd_inversion_3_axes-standard1-08_28-fruit_div_5000-mat_div_1000-color_div_1000",
+    "mat_blip_coeff": 0.001,
+    "model": {
+        "embeddings": {
+            "__target__": "langint.models.textual_inversion_embeddings_deepfloyd.Embeddings",
+            "kwargs": {
+                "blip_guidance": 0,
+                "color_blip_coeff": 0.001,
+                "fruit_blip_coeff": 0.0002,
+                "initializer_word": null,
+                "mat_blip_coeff": 0.001,
+                "num_placeholder_groups": 3,
+                "num_placeholder_words": 72,
+                "shared_tokens": 1
+            }
+        }
+    },
+    "num_placeholder_groups": 3,
+    "num_placeholder_words": 72,
+    "runtime": {
+        "args": {
+            "config": "configs/train_deepfloyd_inversion.yaml",
+            "dataset": "chair-wood-red,chair-wood-orange,chair-wood-yellow,chair-wood-green,chair-wood-blue,chair-wood-purple,chair-wood-black,chair-wood-white,chair-metal-red,chair-metal-orange,chair-metal-yellow,chair-metal-green,chair-metal-blue,chair-metal-purple,chair-metal-black,chair-metal-white,chair-plastic-red,chair-plastic-orange,chair-plastic-yellow,chair-plastic-green,chair-plastic-blue,chair-plastic-purple,chair-plastic-black,chair-plastic-white,table-wood-red,table-wood-orange,table-wood-yellow,table-wood-green,table-wood-blue,table-wood-purple,table-wood-black,table-wood-white,table-metal-red,table-metal-orange,table-metal-yellow,table-metal-green,table-metal-blue,table-metal-purple,table-metal-black,table-metal-white,table-plastic-red,table-plastic-orange,table-plastic-yellow,table-plastic-green,table-plastic-blue,table-plastic-purple,table-plastic-black,table-plastic-white,bench-wood-red,bench-wood-orange,bench-wood-yellow,bench-wood-green,bench-wood-blue,bench-wood-purple,bench-wood-black,bench-wood-white,bench-metal-red,bench-metal-orange,bench-metal-yellow,bench-metal-green,bench-metal-blue,bench-metal-purple,bench-metal-black,bench-metal-white,bench-plastic-red,bench-plastic-orange,bench-plastic-yellow,bench-plastic-green,bench-plastic-blue,bench-plastic-purple,bench-plastic-black,bench-plastic-white",
+            "log_unique": false,
+            "opts": [
+                "training.optimizers.embeddings.kwargs.lr=0.02",
+                "shared_tokens=1",
+                "gt_init=0",
+                "fruit_blip_coeff=0.0002",
+                "mat_blip_coeff=0.001",
+                "color_blip_coeff=0.001",
+                "blip_guidance=0",
+                "num_placeholder_groups=3",
+                "num_placeholder_words=72"
+            ],
+            "overwrite": false,
+            "seed": 0,
+            "tag": "3_axes-standard1-08_28-fruit_div_5000-mat_div_1000-color_div_1000"
+        },
+        "argv": [
+            "scripts/train_clip_inversion.py",
+            "-c",
+            "configs/train_deepfloyd_inversion.yaml",
+            "-t",
+            "3_axes-standard1-08_28-fruit_div_5000-mat_div_1000-color_div_1000",
+            "-d",
+            "chair-wood-red,chair-wood-orange,chair-wood-yellow,chair-wood-green,chair-wood-blue,chair-wood-purple,chair-wood-black,chair-wood-white,chair-metal-red,chair-metal-orange,chair-metal-yellow,chair-metal-green,chair-metal-blue,chair-metal-purple,chair-metal-black,chair-metal-white,chair-plastic-red,chair-plastic-orange,chair-plastic-yellow,chair-plastic-green,chair-plastic-blue,chair-plastic-purple,chair-plastic-black,chair-plastic-white,table-wood-red,table-wood-orange,table-wood-yellow,table-wood-green,table-wood-blue,table-wood-purple,table-wood-black,table-wood-white,table-metal-red,table-metal-orange,table-metal-yellow,table-metal-green,table-metal-blue,table-metal-purple,table-metal-black,table-metal-white,table-plastic-red,table-plastic-orange,table-plastic-yellow,table-plastic-green,table-plastic-blue,table-plastic-purple,table-plastic-black,table-plastic-white,bench-wood-red,bench-wood-orange,bench-wood-yellow,bench-wood-green,bench-wood-blue,bench-wood-purple,bench-wood-black,bench-wood-white,bench-metal-red,bench-metal-orange,bench-metal-yellow,bench-metal-green,bench-metal-blue,bench-metal-purple,bench-metal-black,bench-metal-white,bench-plastic-red,bench-plastic-orange,bench-plastic-yellow,bench-plastic-green,bench-plastic-blue,bench-plastic-purple,bench-plastic-black,bench-plastic-white",
+            "training.optimizers.embeddings.kwargs.lr=0.02",
+            "shared_tokens=1",
+            "gt_init=0",
+            "fruit_blip_coeff=0.0002",
+            "mat_blip_coeff=0.001",
+            "color_blip_coeff=0.001",
+            "blip_guidance=0",
+            "num_placeholder_groups=3",
+            "num_placeholder_words=72"
+        ],
+        "slurm_job_id": "6546101",
+        "slurm_job_name": "3_axes-standard1-08_28"
+    },
+    "shared_tokens": 1,
+    "title": "3_axes-standard1-08_28-fruit_div_5000-mat_div_1000-color_div_1000",
+    "trainer": {
+        "__target__": "langint.trainers.invert_clip_diffuser_style.Trainer",
+        "kwargs": {
+            "loss_modules": {
+                "textual_inversion": {
+                    "__target__": "langint.loss.invert_deepfloyd.InvertDeepFloyd",
+                    "kwargs": {}
+                }
+            },
+            "loss_weights": {
+                "textual_inversion": 1
+            },
+            "title": "3_axes-standard1-08_28-fruit_div_5000-mat_div_1000-color_div_1000"
+        }
+    },
+    "training": {
+        "batch_size": 8,
+        "checkpoint_dir": null,
+        "optimizers": {
+            "embeddings": {
+                "__target__": "torch.optim.AdamW",
+                "kwargs": {
+                    "lr": 0.02,
+                    "weight_decay": 0.05
+                }
+            }
+        },
+        "schedulers": {
+            "embeddings": null
+        },
+        "train_loops_fn": {
+            "__target__": "tu.trainers.simple_trainer.train_loops",
+            "kwargs": {
+                "checkpoint_every": 1000,
+                "eval_every": 500,
+                "max_epoch": null,
+                "max_it": 12000,
+                "print_every": 100,
+                "visualize_every": 500
+            }
+        },
+        "val_batch_size": 4
+    }
+}
