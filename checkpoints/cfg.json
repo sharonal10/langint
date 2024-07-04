@@ -1,0 +1,137 @@
+{
+    "_ENV_VARS_": {
+        "DEBUG": 0,
+        "FAST_ATTENTION": 0,
+        "FORCE_MEM_EFFICIENT_ATTN": "1",
+        "IF_I_FLOAT16": "0",
+        "T5_BFLOAT16": "1"
+    },
+    "blip_guidance": 0,
+    "color_blip_coeff": 0.001,
+    "data": {
+        "__target__": "langint.datasets.glide.SyntheticBiLevel",
+        "kwargs": {
+            "data_root": "beach-charcoal,beach-oil,beach-paint,beach-acrylic,beach-crayon,beach-pastel,tree-charcoal,tree-oil,tree-paint,tree-acrylic,tree-crayon,tree-pastel,apple-charcoal,apple-oil,apple-paint,apple-acrylic,apple-crayon,apple-pastel,cat-charcoal,cat-oil,cat-paint,cat-acrylic,cat-crayon,cat-pastel,dog-charcoal,dog-oil,dog-paint,dog-acrylic,dog-crayon,dog-pastel,face-charcoal,face-oil,face-paint,face-acrylic,face-crayon,face-pastel,city-charcoal,city-oil,city-paint,city-acrylic,city-crayon,city-pastel,hill-charcoal,hill-oil,hill-paint,hill-acrylic,hill-crayon,hill-pastel,sky-charcoal,sky-oil,sky-paint,sky-acrylic,sky-crayon,sky-pastel,car-charcoal,car-oil,car-paint,car-acrylic,car-crayon,car-pastel,bike-charcoal,bike-oil,bike-paint,bike-acrylic,bike-crayon,bike-pastel,house-charcoal,house-oil,house-paint,house-acrylic,house-crayon,house-pastel,castle-charcoal,castle-oil,castle-paint,castle-acrylic,castle-crayon,castle-pastel,chair-charcoal,chair-oil,chair-paint,chair-acrylic,chair-crayon,chair-pastel",
+            "num_data_copies": 1,
+            "num_data_per_prompt": 8,
+            "num_placeholder_words": 84,
+            "shared_tokens": 1,
+            "templates": {
+                "__target__": "langint.utils.dataset.build_bilevel_templates_enforce",
+                "kwargs": {}
+            }
+        }
+    },
+    "data_val": {
+        "__target__": "langint.datasets.glide.SyntheticBiLevelEval",
+        "kwargs": {
+            "data_root": "beach-charcoal,beach-oil,beach-paint,beach-acrylic,beach-crayon,beach-pastel,tree-charcoal,tree-oil,tree-paint,tree-acrylic,tree-crayon,tree-pastel,apple-charcoal,apple-oil,apple-paint,apple-acrylic,apple-crayon,apple-pastel,cat-charcoal,cat-oil,cat-paint,cat-acrylic,cat-crayon,cat-pastel,dog-charcoal,dog-oil,dog-paint,dog-acrylic,dog-crayon,dog-pastel,face-charcoal,face-oil,face-paint,face-acrylic,face-crayon,face-pastel,city-charcoal,city-oil,city-paint,city-acrylic,city-crayon,city-pastel,hill-charcoal,hill-oil,hill-paint,hill-acrylic,hill-crayon,hill-pastel,sky-charcoal,sky-oil,sky-paint,sky-acrylic,sky-crayon,sky-pastel,car-charcoal,car-oil,car-paint,car-acrylic,car-crayon,car-pastel,bike-charcoal,bike-oil,bike-paint,bike-acrylic,bike-crayon,bike-pastel,house-charcoal,house-oil,house-paint,house-acrylic,house-crayon,house-pastel,castle-charcoal,castle-oil,castle-paint,castle-acrylic,castle-crayon,castle-pastel,chair-charcoal,chair-oil,chair-paint,chair-acrylic,chair-crayon,chair-pastel",
+            "num_placeholder_words": 84,
+            "templates": {
+                "__target__": "langint.utils.dataset.build_bilevel_templates_enforce",
+                "kwargs": {}
+            }
+        }
+    },
+    "dataset": "beach-charcoal,beach-oil,beach-paint,beach-acrylic,beach-crayon,beach-pastel,tree-charcoal,tree-oil,tree-paint,tree-acrylic,tree-crayon,tree-pastel,apple-charcoal,apple-oil,apple-paint,apple-acrylic,apple-crayon,apple-pastel,cat-charcoal,cat-oil,cat-paint,cat-acrylic,cat-crayon,cat-pastel,dog-charcoal,dog-oil,dog-paint,dog-acrylic,dog-crayon,dog-pastel,face-charcoal,face-oil,face-paint,face-acrylic,face-crayon,face-pastel,city-charcoal,city-oil,city-paint,city-acrylic,city-crayon,city-pastel,hill-charcoal,hill-oil,hill-paint,hill-acrylic,hill-crayon,hill-pastel,sky-charcoal,sky-oil,sky-paint,sky-acrylic,sky-crayon,sky-pastel,car-charcoal,car-oil,car-paint,car-acrylic,car-crayon,car-pastel,bike-charcoal,bike-oil,bike-paint,bike-acrylic,bike-crayon,bike-pastel,house-charcoal,house-oil,house-paint,house-acrylic,house-crayon,house-pastel,castle-charcoal,castle-oil,castle-paint,castle-acrylic,castle-crayon,castle-pastel,chair-charcoal,chair-oil,chair-paint,chair-acrylic,chair-crayon,chair-pastel",
+    "fruit_blip_coeff": 0.0001,
+    "gt_init": 0,
+    "initializer_word": null,
+    "log_dir": "logs/__train_deepfloyd_inversion_style-standard1-08_28-fruit_div_10000-color_div_1000",
+    "model": {
+        "embeddings": {
+            "__target__": "langint.models.textual_inversion_embeddings_deepfloyd.Embeddings",
+            "kwargs": {
+                "blip_guidance": 0,
+                "color_blip_coeff": 0.001,
+                "fruit_blip_coeff": 0.0001,
+                "initializer_word": null,
+                "num_placeholder_words": 84,
+                "shared_tokens": 1
+            }
+        }
+    },
+    "num_placeholder_words": 84,
+    "runtime": {
+        "args": {
+            "config": "configs/train_deepfloyd_inversion.yaml",
+            "dataset": "beach-charcoal,beach-oil,beach-paint,beach-acrylic,beach-crayon,beach-pastel,tree-charcoal,tree-oil,tree-paint,tree-acrylic,tree-crayon,tree-pastel,apple-charcoal,apple-oil,apple-paint,apple-acrylic,apple-crayon,apple-pastel,cat-charcoal,cat-oil,cat-paint,cat-acrylic,cat-crayon,cat-pastel,dog-charcoal,dog-oil,dog-paint,dog-acrylic,dog-crayon,dog-pastel,face-charcoal,face-oil,face-paint,face-acrylic,face-crayon,face-pastel,city-charcoal,city-oil,city-paint,city-acrylic,city-crayon,city-pastel,hill-charcoal,hill-oil,hill-paint,hill-acrylic,hill-crayon,hill-pastel,sky-charcoal,sky-oil,sky-paint,sky-acrylic,sky-crayon,sky-pastel,car-charcoal,car-oil,car-paint,car-acrylic,car-crayon,car-pastel,bike-charcoal,bike-oil,bike-paint,bike-acrylic,bike-crayon,bike-pastel,house-charcoal,house-oil,house-paint,house-acrylic,house-crayon,house-pastel,castle-charcoal,castle-oil,castle-paint,castle-acrylic,castle-crayon,castle-pastel,chair-charcoal,chair-oil,chair-paint,chair-acrylic,chair-crayon,chair-pastel",
+            "log_unique": false,
+            "opts": [
+                "training.optimizers.embeddings.kwargs.lr=0.02",
+                "shared_tokens=1",
+                "gt_init=0",
+                "fruit_blip_coeff=0.0001",
+                "color_blip_coeff=0.001",
+                "blip_guidance=0",
+                "num_placeholder_words=84"
+            ],
+            "overwrite": false,
+            "seed": 0,
+            "tag": "style-standard1-08_28-fruit_div_10000-color_div_1000"
+        },
+        "argv": [
+            "scripts/train_clip_inversion.py",
+            "-c",
+            "configs/train_deepfloyd_inversion.yaml",
+            "-t",
+            "style-standard1-08_28-fruit_div_10000-color_div_1000",
+            "-d",
+            "beach-charcoal,beach-oil,beach-paint,beach-acrylic,beach-crayon,beach-pastel,tree-charcoal,tree-oil,tree-paint,tree-acrylic,tree-crayon,tree-pastel,apple-charcoal,apple-oil,apple-paint,apple-acrylic,apple-crayon,apple-pastel,cat-charcoal,cat-oil,cat-paint,cat-acrylic,cat-crayon,cat-pastel,dog-charcoal,dog-oil,dog-paint,dog-acrylic,dog-crayon,dog-pastel,face-charcoal,face-oil,face-paint,face-acrylic,face-crayon,face-pastel,city-charcoal,city-oil,city-paint,city-acrylic,city-crayon,city-pastel,hill-charcoal,hill-oil,hill-paint,hill-acrylic,hill-crayon,hill-pastel,sky-charcoal,sky-oil,sky-paint,sky-acrylic,sky-crayon,sky-pastel,car-charcoal,car-oil,car-paint,car-acrylic,car-crayon,car-pastel,bike-charcoal,bike-oil,bike-paint,bike-acrylic,bike-crayon,bike-pastel,house-charcoal,house-oil,house-paint,house-acrylic,house-crayon,house-pastel,castle-charcoal,castle-oil,castle-paint,castle-acrylic,castle-crayon,castle-pastel,chair-charcoal,chair-oil,chair-paint,chair-acrylic,chair-crayon,chair-pastel",
+            "training.optimizers.embeddings.kwargs.lr=0.02",
+            "shared_tokens=1",
+            "gt_init=0",
+            "fruit_blip_coeff=0.0001",
+            "color_blip_coeff=0.001",
+            "blip_guidance=0",
+            "num_placeholder_words=84"
+        ],
+        "slurm_job_id": "6553586",
+        "slurm_job_name": "style-standard1-08_28"
+    },
+    "shared_tokens": 1,
+    "title": "style-standard1-08_28-fruit_div_10000-color_div_1000",
+    "trainer": {
+        "__target__": "langint.trainers.invert_clip_diffuser_style.Trainer",
+        "kwargs": {
+            "loss_modules": {
+                "textual_inversion": {
+                    "__target__": "langint.loss.invert_deepfloyd.InvertDeepFloyd",
+                    "kwargs": {}
+                }
+            },
+            "loss_weights": {
+                "textual_inversion": 1
+            },
+            "title": "style-standard1-08_28-fruit_div_10000-color_div_1000"
+        }
+    },
+    "training": {
+        "batch_size": 8,
+        "checkpoint_dir": null,
+        "optimizers": {
+            "embeddings": {
+                "__target__": "torch.optim.AdamW",
+                "kwargs": {
+                    "lr": 0.02,
+                    "weight_decay": 0.05
+                }
+            }
+        },
+        "schedulers": {
+            "embeddings": null
+        },
+        "train_loops_fn": {
+            "__target__": "tu.trainers.simple_trainer.train_loops",
+            "kwargs": {
+                "checkpoint_every": 1000,
+                "eval_every": 500,
+                "max_epoch": null,
+                "max_it": 12000,
+                "print_every": 100,
+                "visualize_every": 500
+            }
+        },
+        "val_batch_size": 4
+    }
+}

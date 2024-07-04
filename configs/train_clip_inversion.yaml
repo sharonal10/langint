@@ -1,0 +1,73 @@
+_BASE_: null
+_ENV_VARS_:
+  DEBUG: 0
+  FAST_ATTENTION: 0
+
+dataset: null
+log_dir: null
+num_placeholder_words: 1
+initializer_word: "dog"
+title: null
+shared_tokens: null
+gt_init: null
+fruit_blip_coeff: null
+color_blip_coeff: null
+blip_guidance: null
+checkpoint_dir: checkpoints/art/art.pt
+real_image: null
+
+data:
+  __target__: langint.datasets.glide.Synthetic
+  kwargs:
+    num_placeholder_words: ${num_placeholder_words}
+    data_root: ${dataset}
+    num_data_per_prompt: 1
+    num_data_copies: 1
+    shared_tokens: ${shared_tokens}
+    real_image: ${real_image}
+    templates:
+      __target__: langint.utils.dataset.build_bilevel_templates
+      kwargs: {}
+data_val: null
+model:
+  embeddings:
+    __target__: langint.models.textual_inversion_embeddings.TextualInversionEmbeddings
+    kwargs:
+      num_placeholder_words: ${num_placeholder_words}
+      initializer_word: ${initializer_word}
+      shared_tokens: ${shared_tokens}
+      fruit_blip_coeff: ${fruit_blip_coeff}
+      color_blip_coeff: ${color_blip_coeff}
+      blip_guidance: ${blip_guidance}
+trainer:
+  __target__: langint.trainers.invert_clip_diffuser_style.Trainer
+  kwargs:
+    loss_modules:
+      textual_inversion:
+        __target__: langint.loss.invert_glide_cf.InvertGLIDECF
+        kwargs: {}
+    loss_weights:
+      textual_inversion: 1
+    title: ${title}
+    checkpoint_dir: ${checkpoint_dir}
+training:
+  batch_size: 16
+  val_batch_size: 8
+  checkpoint_dir: ${checkpoint_dir}
+  optimizers:
+    embeddings:
+      __target__: torch.optim.AdamW
+      kwargs:
+        lr: ${mult:${training.batch_size},0.001}
+        weight_decay: 0.05
+  schedulers:
+    embeddings: null
+  train_loops_fn:
+    __target__: tu.trainers.simple_trainer.train_loops
+    kwargs:
+      eval_every: 0
+      checkpoint_every: 100
+      print_every: 100
+      visualize_every: 100
+      max_epoch: null
+      max_it: 1000 #10000
