@@ -1,0 +1,48 @@
+_BASE_: configs/train_clip_inversion_bilevel.yaml
+
+_ENV_VARS_:
+  __allow_new_key__: true
+  IF_I_FLOAT16: "0"
+  T5_BFLOAT16: "1"
+  FORCE_MEM_EFFICIENT_ATTN: "1"
+
+initializer_word: null
+
+data:
+  kwargs:
+    templates:
+      __overwrite__: true
+      __target__: langint.utils.dataset.build_trilevel_templates_enforce
+      kwargs: {}
+data_val:
+  kwargs:
+    templates:
+      __overwrite__: true
+      __target__: langint.utils.dataset.build_trilevel_templates_enforce
+      kwargs: {}
+model:
+  embeddings:
+    __target__: langint.models.textual_inversion_embeddings_deepfloyd.Embeddings
+    kwargs:
+      initializer_word: ${initializer_word}
+
+trainer:
+  kwargs:
+    loss_modules:
+      textual_inversion:
+        __overwrite__: true
+        __target__: langint.loss.invert_deepfloyd.InvertDeepFloyd
+        kwargs: {}
+training:
+  batch_size: 8
+  val_batch_size: 4
+  train_loops_fn:
+    kwargs:
+      visualize_every: 500
+      eval_every: 500
+      max_it: 12000
+  optimizers:
+    embeddings:
+      kwargs:
+        lr: ${mult:${training.batch_size},0.02}
+        weight_decay: 0.05

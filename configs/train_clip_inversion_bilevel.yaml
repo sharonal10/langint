@@ -1,0 +1,24 @@
+_BASE_: configs/train_clip_inversion.yaml
+
+dataset: null
+num_placeholder_words: null  # must specify in command line
+initializer_word: null
+
+data:
+  __target__: langint.datasets.glide.SyntheticBiLevel
+data_val:
+  __overwrite__: true
+  __target__: langint.datasets.glide.SyntheticBiLevelEval
+  kwargs:
+    num_placeholder_words: ${num_placeholder_words}
+    data_root: ${dataset}
+    templates:
+      __target__: langint.utils.dataset.build_bilevel_templates
+      kwargs: {}
+model:
+  embeddings:
+    __target__: langint.models.textual_inversion_embeddings_bilevel.TextualInversionEmbeddingsBiLevel
+training:
+  train_loops_fn:
+    kwargs:
+      eval_every: 100
